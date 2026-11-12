@@ -1,0 +1,5 @@
+{
+  "name": "claude-model-effort-line",
+  "owner": { "name": "dziliak" },
+  "plugins": [{ "name": "model-effort-line", "source": "./" }]
+}
