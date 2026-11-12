@@ -22,4 +22,6 @@ claude plugin install model-effort-line --marketplace dziliak/claude-model-effor
 
 In the desktop app, where `/plugin` does not run: click + next to the prompt box, then Plugins, Add marketplace with `dziliak/claude-model-effort-line`, then Add plugin.
 
-This repository is private: the install works only for people who can read it on GitHub and whose machine already holds a git credential for github.com (an SSH key, or `gh auth login` then `gh auth setup-git`).
+## License
+
+MIT
