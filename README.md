@@ -2,7 +2,7 @@
 
 A Claude Code mod that shows the current model and effort level at the left of the footer, on the line with the permission mode (`⏵⏵ auto mode on`).
 
-The model is the main loop's, as `/model` shows it. The effort comes from the `/config` effort row when there is one, otherwise from the effort the last request was sent with, so it can appear only after the first turn.
+The model is the main loop's, as `/model` shows it. The effort comes from the model's saved effort in the settings (`modelSettings`) when there is one, otherwise from the effort the last request was sent with, which appears only after the first turn.
 
 ## Install
 

@@ -16,9 +16,10 @@ export const register: Register = on => {
 
   on('ui.render', { component: 'PromptHint' }, async ($, e, next) => {
     const model = await $.session.model()
-    // The /config row is current before any turn and after an effort change; the last request's is the fallback.
-    const row = (await $.config.list()).find(r => /effort/i.test(r.key))
-    const level = row?.value ?? (await read($, effort))
+    // The model's saved effort is current before any turn and after a change; the last request's is the fallback.
+    // shortcut: an effort set for this session only shows the saved one, read the last request's first if that matters.
+    const saved = (await $.settings.read({ key: 'modelSettings' })) as Record<string, { effortLevel?: string }> | undefined
+    const level = saved?.[model]?.effortLevel ?? (await read($, effort))
 
     const label = level == null || level === '' ? model : `${model} · ${String(level)}`
 
